@@ -6,23 +6,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class applicationConfiguration {
+public class Control {
 	
 
 	@Autowired
-	private service ser;
+	private Message message;
 	
 	@RequestMapping("/hello")
 	public String show() {
-		return ser.sendMessage();
+		return message.showMessage();
 	}
 	
 	
 }
 
 @Component
-class service{
-	public String sendMessage() {
-		return "Hello World";
+class Message{
+	public String showMessage() {
+		return "Hello! World";
 	}
 }
